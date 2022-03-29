@@ -6,7 +6,7 @@ base_debug_img_arg=""
 docker_file_arg="Dockerfile"
 target_arg=""
 local_test_only='N'
-platforms="linux/amd64"
+platforms="linux/arm64"
 name_space="jaegertracing"
 
 while getopts "lbc:d:f:p:t:" opt; do
