@@ -9,7 +9,7 @@ on:
 
 jobs:
   all-in-one:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, ARM64]
     steps:
     - uses: actions/checkout@v3
       with:
@@ -34,6 +34,9 @@ jobs:
       run: make install-ci
     
     - uses: docker/setup-qemu-action@v1
+    
+    - name: Install Yarn
+      run: npm install -g yarn
 
     - name: Build, test, and publish all-in-one image
       run: bash scripts/build-all-in-one-image.sh
